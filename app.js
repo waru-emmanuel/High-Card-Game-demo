@@ -13,11 +13,11 @@ document.querySelector('#btn-new').addEventListener('click',()=>{
     // 1. Reset JS scores & shuffle limit.
     shuffleLimit=3;
     userScore=0;
-    compScore=0;
+    aiScore=0;
 
     // 2. Reset HTML scores & texts.
     document.querySelector("#score-0").textContent=userScore;
-    document.querySelector("#score-1").textContent=compScore;
+    document.querySelector("#score-1").textContent=aiScore;
     document.getElementById("player-title-0").textContent="Player 1";
     document.getElementById("player-title-1").textContent="Computer";
 
