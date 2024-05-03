@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="style.css">
     <title>HIGH CARD GAME</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>HIGH CARD GAME</h1>
-        <ul>
-            <li>From: ByteBrigade</li>
-        </ul>
         <div class="wrapper">
+            <!-- Player Panels and Scores -->
             <div class="player-panel" id="player-0">
                 <div class="player-title" id="player-title-0">Player</div>
                 <div class="player-score" id="score-0">0</div>
@@ -27,33 +26,38 @@
                     <img id="player-card-1" src="img/PNG/card_back.png" alt="playing card" class="card">
                 </div>
             </div>
-            <button class="btn" id="btn-new">
-                <i class="fas fa-redo"></i>
-                <span>New game</span>
-            </button>
-            <button class="btn" id="btn-shuffle">
-                <i class="fas fa-exchange-alt"></i>
-                <span>Draw Card</span>
-            </button>
-            <button class="btn" id="btn-hold">
-                <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <span>Hold</span>
-            </button>
+            
+            <!-- Difficulty Level Dropdown -->
+            <label for="difficulty">Select Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+
+            <!-- Buttons for New Game, Draw, and Hold -->
+            <button class="btn" id="btn-new">New Game</button>
+            <button class="btn" id="btn-shuffle">Draw Card</button>
+            <button class="btn" id="btn-hold">Hold</button>
+
+            <ul>
+                <p>Game Rules</p>
+                <li>Players randomly select cards from a deck.</li>
+                <li>User has 3 chances to select/hold card.</li>
+                <li>Player with the highest card wins the round.</li>
+                <li>In the case of a draw, the process will repeat itself until the highest card is determined.</li>
+                <li>Both cards are then put back into the deck.Aces are low!</li>
+                <li>First player to reach  7 points becomes champion!</ul>
+            </ul>
         </div>
+        
+    
     </div>
-    <ul>
-        <p>Game Rules</p>
-        <li>Players randomly select cards from a deck.</li>
-        <li>User has 3 chances to select/hold card.</li>
-        <li>Player with the highest card wins the round.</li>
-        <li>In the case of a draw, the process will repeat itself until the highest card is determined.</li>
-        <li>Both cards are then put back into the deck.Aces are low!</li>
-        <li>First player to 5 wins!</ul>
-    </ul>
+    <!-- Audio container for sound effects -->
     <div id="audio-container">
-        <audio id="winning-sound" src=" music/mixkit-males-yes-victory-2012.mp3.wav"></audio>
-        <audio id="lose-sound" src="music/brass-fail-1-a-185074.mp3"></audio>
+        <audio id="winning-sound" src="audio/winning.mp3" preload="auto"></audio>
+        <audio id="losing-sound" src="audio/losing.mp3" preload="auto"></audio>
     </div>
     <script src="src/index.js"></script>
-  </body>
+</body>
 </html>
