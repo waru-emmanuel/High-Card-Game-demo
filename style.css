@@ -5,20 +5,25 @@
 }
 
 body {
-    background-color: whitesmoke;
+    background-color: aquamarine;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
+    font-size: 48px;
     text-align: center;
+    position:relative;
 }
 
 .container {
     margin-top: 20px;
+    
 }
 
 .wrapper {
     display: inline-block;
-    width: 1000px;
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    width:1000px;
+    top: 170px;
+    left: 15%;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.748);
+    border-radius: 10px;
 }
 
 .player-panel {
@@ -30,12 +35,20 @@ body {
 
 .player-title, .player-score {
     padding: 20px;
+    text-transform: uppercase;
 }
 
 .card {
     height: 220px;
     width: 150px;
     display: inline-block;
+}
+#player-0{
+    background-color:  #19b8b8;
+}
+
+#player-1{
+    background-color:#0edddd;
 }
 
 .btn {
@@ -78,4 +91,13 @@ select {
 
 #audio-container audio {
     display: none;
+}
+li {
+    list-style-type: square;
+    font-size: small;
+    display: block;
+}
+p {
+    text-transform: uppercase;
+    font-size: medium;
 }
