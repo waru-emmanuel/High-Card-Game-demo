@@ -17,23 +17,7 @@ function setDifficulty() {
 // Event listener for difficulty dropdown change
 document.getElementById('difficulty').addEventListener('change', setDifficulty);
 
-// Function to adjust AI behavior based on difficulty
-function adjustAIBehavior() {
-    // Implement AI behavior based on the selected difficulty
-    switch (difficulty) {
-        case Difficulty.EASY:
-            // Implement easy AI behavior
-            break;
-        case Difficulty.MEDIUM:
-            // Implement medium AI behavior
-            break;
-        case Difficulty.HARD:
-            // Implement hard AI behavior
-            break;
-        default:
-            break;
-    }
-}
+
 
 // Default
 let userScore, aiScore, user_card, ai_card, userNumber, aiNumber, shuffleLimit, highScore;
@@ -76,6 +60,9 @@ document.querySelector('#btn-shuffle').addEventListener('click', () => {
         // Random number
         userNumber = Math.floor(Math.random() * 13) + 1;
 
+        // Hide previous AI card
+        ai_card.src = 'img/PNG/card_back.png';
+
         // Display result with animation
         if (shuffleLimit > 0) {
             user_card = document.getElementById("player-card-0");
@@ -94,9 +81,12 @@ document.querySelector('#btn-shuffle').addEventListener('click', () => {
         document.getElementById("btn-hold").disabled = false;
 
         // Set difficulty
+        setDifficulty();
         adjustAIBehavior();
     }
 });
+
+
 
 // Hold
 function hold() {
@@ -126,12 +116,21 @@ function hold() {
         shuffleLimit = 3;
         document.getElementById("btn-hold").disabled = true;
 
+        // Reset player titles unless one of them is a champion
+        if (userScore < highScore && aiScore < highScore) {
+            setTimeout(() => {
+                document.getElementById("player-title-0").textContent = "Player";
+                document.getElementById("player-title-1").textContent = "Computer";
+            }, 1000);
+        }
+
         // Check if the game ends
         if (userScore === highScore || aiScore === highScore) {
             endGame();
         }
     }
 }
+
 
 document.getElementById('btn-hold').addEventListener('click', hold);
 
