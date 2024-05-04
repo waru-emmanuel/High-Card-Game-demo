@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: aquamarine;
+    background-color: whitesmoke;
     font-family: 'Times New Roman', Times, serif;
     font-size: 27px;
     text-align: center;
@@ -28,7 +28,7 @@ body {
 
 .player-panel {
     width: 50%;
-    height: 600px;
+    height: 500px;
     float: left;
     text-align: center;
 }

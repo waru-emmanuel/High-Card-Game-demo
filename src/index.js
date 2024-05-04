@@ -68,11 +68,11 @@ document.querySelector('#btn-shuffle').addEventListener('click', () => {
         if (shuffleLimit > 0) {
             user_card = document.getElementById("player-card-0");
             user_card.src = 'img/PNG/card-back.png';
-            user_card.style.animation = 'flipInX 0.5s backwards'; // Add animation class
+            user_card.style.animation = 'flipInX 0.0s backwards'; // Add animation class
             setTimeout(() => {
                 user_card.src = 'img/PNG/card-' + userNumber + '.png';
-                user_card.style.animation = 'flipOutX 0.5s backwards'; // Add animation class
-            }, 500);
+                user_card.style.animation = 'flipOutX 0.0s backwards'; // Add animation class
+            }, 0);
         }
 
         // Update shuffle limit
@@ -98,11 +98,11 @@ function hold() {
         // Display AI's card with animation
         ai_card = document.getElementById("player-card-1");
         ai_card.src = 'img/PNG/card-back.png';
-        ai_card.style.animation = 'flipInX 0.5s backwards'; // Add animation class
+        ai_card.style.animation = 'flipInX 0.0s backwards'; // Add animation class
         setTimeout(() => {
             ai_card.src = 'img/PNG/card-' + aiNumber + '.png';
-            ai_card.style.animation = 'flipOutX 0.5s backwards'; // Add animation class
-        }, 500);
+            ai_card.style.animation = 'flipOutX 0.0s backwards'; // Add animation class
+        }, 0);
 
         // Compare results
         if (userNumber > aiNumber) {
